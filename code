@@ -1,1 +1,23 @@
 #include<stdio.h>
+void array_sorting(int n, int a[10000]){
+    for(int i = 1; i <= n; i++){
+        scanf("%d",&a[i]);
+    }
+    for(int i = 1; i <= n-1; i++){
+        for(int j = n; j >= i + 1; j--){
+            if (a[j-1] > a[j]){
+                int temp = a[j-1];
+                a[j-1] = a[j];
+                a[j] = temp;
+            }
+        }
+    }
+    for(int i = 1; i <= n; i++){
+        printf("%d ",a[i]);
+    }
+}
+int main (){
+    int n, a[10000];
+    scanf("%d",&n);
+    array_sorting(n,a);
+}
